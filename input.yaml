@@ -1,0 +1,7 @@
+? - &id2A
+  - &id3A [lol]
+  - &id3B [lol]
+- &id2B
+  - *id3A
+  - *id3B
+: value

@@ -1,0 +1,18 @@
+-Command to build python Docker image
+docker build -t python-yaml-parser $(pwd)/yaml_parsers/python
+
+-Command to Create Python Docker image container and run parser.py file
+docker run -it -v $(pwd)/input.yaml:/app/input.yaml  -v $(pwd)/yaml_parsers/python:/app python-yaml-parser ./input.yaml output.yaml
+
+-Command to build ruby Docker image
+docker build -t ruby-yaml-parser $(pwd)/yaml_parsers/ruby
+
+-Command to Create ruby Docker image container and run parser.rb file
+docker run -it -v $(pwd)/input.yaml:/app/input.yaml  -v $(pwd)/yaml_parsers/ruby:/app ruby-yaml-parser ./input.yaml output.yaml
+
+-Command to build go Docker image
+docker build -t go-yaml-parser $(pwd)/yaml_parsers/go
+
+-Command to Create go Docker image container and run parser.go file
+docker run -it -v $(pwd)/input.yaml:/app/input.yaml -v $(pwd)/yaml_parsers/go/output:/app/output  go-yaml-parser ./input.yaml ./output/output.yaml
+
